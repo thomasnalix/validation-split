@@ -61,13 +61,13 @@
     {/if}
     <form on:submit|preventDefault={handleSubmit}>
         <label for="currentPassword">Mot de passe actuel :</label>
-        <input bind:value={currentPassword} id="currentPassword" required type="password"/>
+        <input type="password" id="currentPassword" bind:value={currentPassword} required />
 
         <label for="newPassword">Nouveau mot de passe :</label>
-        <input bind:value={newPassword} id="newPassword" required type="password"/>
+        <input type="password" id="newPassword" bind:value={newPassword} required />
 
         <label for="confirmNewPassword">Confirmer le nouveau mot de passe :</label>
-        <input bind:value={confirmNewPassword} id="confirmNewPassword" required type="password"/>
+        <input type="password" id="confirmNewPassword" bind:value={confirmNewPassword} required />
 
         <button type="submit">Mettre à jour le mot de passe</button>
     </form>

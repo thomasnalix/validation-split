@@ -31,11 +31,11 @@
     <div class="search-container">
         <h1>Recherche rapide</h1>
         <input
+                type="text"
                 bind:value={searchTitle}
+                placeholder="Entrez un titre (ex: Développeur Python)"
                 class="search-input"
                 on:input={handleSearch}
-                placeholder="Entrez un titre (ex: Développeur Python)"
-                type="text"
         />
         {#if errorMessage}
             <p class="error-message">{errorMessage}</p>

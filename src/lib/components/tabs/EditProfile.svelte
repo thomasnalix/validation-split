@@ -47,7 +47,7 @@
         try {
             const res = await fetch('/api/profile', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(user)
             });
             if (!res.ok) {
@@ -81,25 +81,25 @@
     <textarea bind:value={user.about}></textarea>
 
     <label>Expérience :</label>
-    <input bind:value={user.experience} type="text"/>
+    <input type="text" bind:value={user.experience}/>
 
     <label>Photo (URL) :</label>
-    <input bind:value={user.photo} type="url"/>
+    <input type="url" bind:value={user.photo}/>
 
     <label>Téléphone :</label>
-    <input bind:value={user.phone} type="tel"/>
+    <input type="tel" bind:value={user.phone}/>
 
     <label>Adresse :</label>
-    <input bind:value={user.address} type="text"/>
+    <input type="text" bind:value={user.address}/>
 
     <label>Type d’utilisateur :</label>
     <div>
         <div class="radio-container">
-            <input bind:group={user.userType} id="trainer" type="radio" value="Trainer"/>
+            <input type="radio" id="trainer" value="Trainer" bind:group={user.userType}/>
             <label for="trainer">Formateur</label>
         </div>
         <div class="radio-container">
-            <input bind:group={user.userType} id="learner" type="radio" value="Learner"/>
+            <input type="radio" id="learner" value="Learner" bind:group={user.userType}/>
             <label for="learner">Apprenant</label>
         </div>
     </div>

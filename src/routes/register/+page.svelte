@@ -40,23 +40,23 @@
 
 <form on:submit|preventDefault={submitRegister}>
     <label for="firstName">Prénom:</label>
-    <input bind:value={firstName} id="firstName" required type="text"/>
+    <input type="text" id="firstName" bind:value={firstName} required/>
 
     <label for="lastName">Nom:</label>
-    <input bind:value={lastName} id="lastName" required type="text"/>
+    <input type="text" id="lastName" bind:value={lastName} required/>
 
     <label for="email">Email:</label>
-    <input bind:value={email} id="email" required type="email"/>
+    <input type="email" id="email" bind:value={email} required/>
 
     <label for="password">Mot de passe:</label>
-    <input bind:value={password} id="password" required type="password"/>
+    <input type="password" id="password" bind:value={password} required/>
 
     <label for="confirmPassword">Confirmer mot de passe:</label>
-    <input bind:value={confirmPassword} id="confirmPassword" required type="password"/>
+    <input type="password" id="confirmPassword" bind:value={confirmPassword} required/>
 
     <div class="radio-container">
         <label for="acceptTerms">J'accepte les conditions d'utilisation</label>
-        <input bind:checked={acceptTerms} id="acceptTerms" required type="checkbox"/>
+        <input type="checkbox" id="acceptTerms" bind:checked={acceptTerms} required/>
     </div>
 
     <button type="submit">S'inscrire</button>

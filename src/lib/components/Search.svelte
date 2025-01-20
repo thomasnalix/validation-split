@@ -39,13 +39,13 @@
 
     <form on:submit|preventDefault={fetchSearchResults}>
         <label for="domain">Domaine</label>
-        <input bind:value={domain} id="domain" placeholder="Anglais" required type="text"/>
+        <input id="domain" type="text" bind:value={domain} required placeholder="Anglais"/>
 
         <label for="city">Ville</label>
-        <input bind:value={city} id="city" placeholder="Paris" type="text"/>
+        <input id="city" type="text" bind:value={city} placeholder="Paris"/>
 
         <label for="categories">Catégories</label>
-        <input bind:value={categoriesInput} id="categories" placeholder="Design" type="text"/>
+        <input id="categories" type="text" bind:value={categoriesInput} placeholder="Design"/>
 
         <button type="submit">Rechercher</button>
     </form>

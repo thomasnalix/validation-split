@@ -37,11 +37,11 @@
     <div>
         <p>Pour quelle(s) raison(s) souhaitez-vous supprimer votre profil ?</p>
         <div class="radio-container">
-            <input bind:group={reason} id="reason1" type="checkbox" value="Je n’utilise plus l’application"/>
+            <input type="checkbox" id="reason1" value="Je n’utilise plus l’application" bind:group={reason}/>
             <label for="reason1">Je n’utilise plus l’application</label>
         </div>
         <div class="radio-container">
-            <input bind:group={reason} id="reason2" type="checkbox" value="Autre"/>
+            <input type="checkbox" id="reason2" value="Autre" bind:group={reason}/>
             <label for="reason2">Autre</label>
         </div>
     </div>
@@ -49,7 +49,7 @@
     <label>Indiquez vos raisons :</label>
     <textarea bind:value={additionalInfo}></textarea>
 
-    <button disabled={!(additionalInfo && reason)} type="submit">Supprimer</button>
+    <button type="submit" disabled={!(additionalInfo && reason)}>Supprimer</button>
 </form>
 
 

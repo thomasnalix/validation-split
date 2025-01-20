@@ -37,14 +37,14 @@
 
 <form on:submit|preventDefault={submitLogin}>
     <label for="email">Email:</label>
-    <input bind:value={email} id="email" required type="email"/>
+    <input type="email" id="email" bind:value={email} required/>
 
     <label for="password">Mot de passe:</label>
-    <input bind:value={password} id="password" required type="password"/>
+    <input type="password" id="password" bind:value={password} required/>
 
     <div class="radio-container">
         <label for="remember">Mémoriser mes identifiants</label>
-        <input bind:checked={remember} id="remember" type="checkbox"/>
+        <input type="checkbox" id="remember" bind:checked={remember}/>
     </div>
 
     <button type="submit">Se connecter</button>

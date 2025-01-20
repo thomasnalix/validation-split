@@ -6,14 +6,14 @@ interface SearchParams {
     title: string;
 }
 
-export const GET: RequestHandler = async ({url}) => {
+export const GET: RequestHandler = async ({ url }) => {
     try {
         const params: SearchParams = {
             title: url.searchParams.get('title') || '',
         };
 
         if (!params.title) {
-            return json({error: "Veuillez remplir le champ titre"}, {status: 400});
+            return json({ error: "Veuillez remplir le champ titre" }, { status: 400 });
         }
 
         const annoncesCollection = await getCollection('annonces');
@@ -26,7 +26,7 @@ export const GET: RequestHandler = async ({url}) => {
         });
 
         if (filteredAnnonces.length === 0) {
-            return json({error: "Aucun résultat n’est lié à votre recherche"}, {status: 404});
+            return json({ error: "Aucun résultat n’est lié à votre recherche" }, { status: 404 });
         }
 
         return json(filteredAnnonces);
