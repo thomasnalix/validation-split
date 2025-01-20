@@ -1,16 +1,18 @@
 <script lang="ts">
     import ProfileInfo from "$lib/components/tabs/ProfileInfo.svelte";
     import EditProfile from "$lib/components/tabs/EditProfile.svelte";
-    import Calendar from "$lib/components/tabs/Calendar.svelte";
+    import EditPassword from "$lib/components/tabs/EditPassword.svelte";
     import DeleteProfile from "$lib/components/tabs/DeleteProfile.svelte";
+    import Disconnect from "$lib/components/tabs/Disconnect.svelte";
 
     let activeTab = 'profile';
 
     const tabs = [
-        { id: 'profile', label: 'Afficher le Profil', component: ProfileInfo },
-        { id: 'edit', label: 'Modifier le Profil', component: EditProfile },
-        { id: 'calendar', label: 'Calendrier', component: Calendar },
-        { id: 'delete', label: 'Supprimer le Profil', component: DeleteProfile }
+        {id: 'profile', label: 'Afficher le Profil', component: ProfileInfo},
+        {id: 'edit', label: 'Modifier le Profil', component: EditProfile},
+        {id: 'password', label: 'Modifier le mot de passe', component: EditPassword},
+        {id: 'delete', label: 'Supprimer le Profil', component: DeleteProfile,},
+        {id: 'disconnect', label: 'Se deconnecter', component: Disconnect,}
     ];
 </script>
 
@@ -31,7 +33,7 @@
     <div class="tab-content">
         {#each tabs as tab}
             {#if activeTab === tab.id}
-                <svelte:component this={tab.component} />
+                <svelte:component this={tab.component}/>
             {/if}
         {/each}
     </div>

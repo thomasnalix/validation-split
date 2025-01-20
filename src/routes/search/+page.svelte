@@ -7,3 +7,4 @@
 <h1>Recherche</h1>
 
 <Search></Search>
+<QuickSearch></QuickSearch>

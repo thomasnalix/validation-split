@@ -29,22 +29,26 @@
 
 <div>
     <h2>Recherche avancée</h2>
+
+    {#if !!error}
+        <div class="feedback error">
+            <p class="subtitle">Erreur</p>
+            <p>{error}</p>
+        </div>
+    {/if}
+
     <form on:submit|preventDefault={fetchSearchResults}>
         <label for="domain">Domaine</label>
-        <input id="domain" type="text" bind:value={domain} required placeholder="Anglais"/>
+        <input bind:value={domain} id="domain" placeholder="Anglais" required type="text"/>
 
         <label for="city">Ville</label>
-        <input id="city" type="text" bind:value={city} placeholder="Paris"/>
+        <input bind:value={city} id="city" placeholder="Paris" type="text"/>
 
         <label for="categories">Catégories</label>
-        <input id="categories" type="text" bind:value={categoriesInput} placeholder="Design"/>
+        <input bind:value={categoriesInput} id="categories" placeholder="Design" type="text"/>
 
         <button type="submit">Rechercher</button>
     </form>
-
-    {#if error}
-        <p>{error}</p>
-    {/if}
 
     <ul>
         {#each results as annonce}

@@ -16,15 +16,9 @@
         <li class:active={currentPage === 'search'}>
             <a href="/search">Recherche</a>
         </li>
-<!--        <li class:active={currentPage === 'calendar'}>-->
-<!--            <a href="/calendar">Réserver un cours</a>-->
-<!--        </li>-->
         <li class:active={currentPage === 'profile'}>
             <a href="/profile">Profil</a>
         </li>
-<!--        <li class:active={currentPage === 'news'}>-->
-<!--            <a href="/news">Actualités</a>-->
-<!--        </li>-->
     </ul>
 </nav>
 

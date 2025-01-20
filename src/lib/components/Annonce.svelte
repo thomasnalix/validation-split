@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { AnnonceModel } from "$lib/models/annonceModel";
+    import type {AnnonceModel} from "$lib/models/annonceModel";
 
     export let annonce: AnnonceModel;
 </script>

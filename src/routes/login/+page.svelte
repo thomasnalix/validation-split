@@ -17,7 +17,8 @@
             if (!res.ok) {
                 error = data.error;
             } else {
-               error = null
+                await goto('/')
+                error = null
             }
         } catch (err) {
             error = "Une erreur est survenue lors de la connexion";
@@ -36,14 +37,14 @@
 
 <form on:submit|preventDefault={submitLogin}>
     <label for="email">Email:</label>
-    <input type="email" id="email" bind:value={email} required/>
+    <input bind:value={email} id="email" required type="email"/>
 
     <label for="password">Mot de passe:</label>
-    <input type="password" id="password" bind:value={password} required/>
+    <input bind:value={password} id="password" required type="password"/>
 
     <div class="radio-container">
         <label for="remember">Mémoriser mes identifiants</label>
-        <input type="checkbox" id="remember" bind:checked={remember}/>
+        <input bind:checked={remember} id="remember" type="checkbox"/>
     </div>
 
     <button type="submit">Se connecter</button>
