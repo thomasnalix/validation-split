@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import ProfileInfo from "$lib/components/tabs/ProfileInfo.svelte";
     import EditProfile from "$lib/components/tabs/EditProfile.svelte";
     import Calendar from "$lib/components/tabs/Calendar.svelte";

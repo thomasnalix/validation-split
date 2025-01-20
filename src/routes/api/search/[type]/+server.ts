@@ -1,4 +1,4 @@
-import { json, type RequestHandler } from '@sveltejs/kit';
+import {error, json, type RequestHandler} from '@sveltejs/kit';
 
 interface SearchParams {
     domain?: string;
@@ -13,16 +13,23 @@ export const GET: RequestHandler = async ({ url }) => {
         categories: url.searchParams.getAll('categories') || undefined
     };
 
+    if (!params.domain) {
+        error(401, "Veuillez remplir le champs domaine")
+    }
+
+    if (params.city === "") params.city = undefined
+    if (params.categories ? params.categories[0] === '' : true) params.categories = undefined
+
     const annonces = [
-        { title: "Developpeur Front-end", type: "Design", valueType: "Freelance", domaine: "Web", city: "Paris", categories: ["Design"] },
-        { title: "Stage de développement", type: "Développement", valueType: "Stage", domaine: "Informatique", city: "Paris", categories: ["Web"] },
-        { title: "UI/UX Designer", type: "Design", valueType: "Freelance", domaine: "Anglais", city: "Lyon", categories: ["Design"] },
-        { title: "Developpeur Python", type: "Développement", valueType: "Freelance", domaine: "Anglais", city: "Paris", categories: ["Informatique"] }
+        { title: "Developpeur Front-end", type: "Design", valueType: "Freelance", domain: "Web", city: "Paris", categories: ["Design"] },
+        { title: "Stage de développement", type: "Développement", valueType: "Stage", domain: "Informatique", city: "Paris", categories: ["Web"] },
+        { title: "UI/UX Designer", type: "Design", valueType: "Freelance", domain: "Anglais", city: "Lyon", categories: ["Design"] },
+        { title: "Developpeur Python", type: "Développement", valueType: "Freelance", domain: "Anglais", city: "Paris", categories: ["Informatique"] }
     ];
 
     const filteredAnnonces = annonces.filter((annonce) => {
         return (
-            (!params.domain || annonce.domaine.toLowerCase().includes(params.domain.toLowerCase())) &&
+            (!params.domain || annonce.domain.toLowerCase().includes(params.domain.toLowerCase())) &&
             (!params.city || annonce.city.toLowerCase().includes(params.city.toLowerCase())) &&
             (!params.categories || params.categories.every((category) => annonce.categories.includes(category)))
         );
